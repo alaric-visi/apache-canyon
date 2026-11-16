@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Apache//Can.yon — Dusk Ops</title>
+  <meta name="description" content="A canyon gunship shooter flown from dusk to dawn.">
+  <meta name="theme-color" content="#140b08">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Share+Tech+Mono&display=swap">
+</head>
+<body>
+  <div id="gameContainer">
+
+    <div id="hud">
+      <div class="hud-item"><span class="hud-label">HI-SC</span><span class="hud-value" id="hiscore">000000</span></div>
+      <div class="hud-item"><span class="hud-label">SCORE</span><span class="hud-value" id="score">000000</span></div>
+      <div class="hud-item"><span class="hud-label">LIVES</span><span class="hud-value" id="lives">03</span></div>
+      <div class="hud-item"><span class="hud-label">TIME</span><span class="hud-value" id="time">000</span></div>
+      <div class="hud-item"><span class="hud-label">CHAIN</span><span class="hud-value" id="mult">×1.0</span></div>
+      <div class="hud-item"><span class="hud-label">MSL</span><span class="hud-value" id="missiles">10</span></div>
+      <div class="hud-item"><span class="hud-label">FLR</span><span class="hud-value" id="flares">3</span></div>
+      <div class="hud-item"><span class="hud-label">SPD</span><span class="hud-value" id="speed">2.5</span></div>
+      <div class="hud-item hud-bar-item">
+        <span class="hud-label">SHLD</span>
+        <div class="hud-bar"><div class="hud-bar-fill" id="shieldsBar"></div><span class="hud-bar-value" id="shieldsValue">100%</span></div>
+      </div>
+      <div class="hud-item hud-bar-item">
+        <span class="hud-label">FUEL</span>
+        <div class="hud-bar"><div class="hud-bar-fill" id="fuelBar"></div><span class="hud-bar-value" id="fuelValue">100%</span></div>
+      </div>
+      <div class="hud-item hud-bar-item" id="empItem">
+        <span class="hud-label">EMP</span>
+        <div class="hud-bar"><div class="hud-bar-fill emp-fill" id="empBar"></div><span class="hud-bar-value" id="empValue">0%</span></div>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="title">
+      <div class="title-kicker">DUSK OPS · VER 8.0</div>
+      <h1 class="title-logo">APACHE<span>//</span>CAN.YON</h1>
+      <div class="title-sub">Low sun. Narrow canyon. Hostile sky.</div>
+      <div class="menu" id="menu"></div>
+      <div class="title-hi">HI-SCORE <span data-hiscore>000000</span> · ↑↓ SELECT · [SPACE] LAUNCH</div>
+    </div>
+
+    <div id="panel">
+      <h2 id="panelTitle"></h2>
+      <div id="panelBody"></div>
+      <div class="menu" id="panelMenu"></div>
+    </div>
+
+    <div id="progress"><div id="progressFill"></div><span id="progressLabel"></span></div>
+    <div id="sectorCard"><div class="sc-title"></div><div class="sc-sub"></div></div>
+
+    <div id="boss"><div class="boss-name" id="bossName"></div><div class="boss-bar"><div id="bossFill"></div></div></div>
+    <div id="bossBanner">⚠ HOSTILE GUNSHIP INBOUND ⚠</div>
+
+    <div id="hint"></div>
+    <div id="captions" aria-live="polite"></div>
+    <pre id="debug"></pre>
+    <div id="message"></div>
+    <div class="controls-hint">[Z] FIRE (tap to cool) · [X] MISSILE (hold to lock) · [C] FLARE · [V] EMP · [SHIFT] BOOST · ARROWS MOVE · [SPACE] PAUSE · <span id="qualityStatus">[Q] QUALITY: HIGH</span> · <span id="muteStatus">[M]: MUTE (OFF)</span> · [`] DEBUG</div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

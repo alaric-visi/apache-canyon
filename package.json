@@ -1,0 +1,28 @@
+{
+  "name": "apache-canyon",
+  "private": true,
+  "version": "1.0.0-rc.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "e2e": "playwright test",
+    "balance": "vite-node scripts/balance.ts",
+    "replays:record": "vite-node scripts/record-replays.ts",
+    "package": "npm run build && rm -f apache-canyon-web.zip && cd dist && zip -qr ../apache-canyon-web.zip . -x '*.map'",
+    "serve": "npm run build && vite preview --port 4173 --strictPort"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "pixi-filters": "^6.1.5",
+    "pixi.js": "^8.22.0"
+  }
+}
