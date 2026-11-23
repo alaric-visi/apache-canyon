@@ -2,7 +2,7 @@
 
 A vertical-scrolling canyon helicopter shooter set at golden hour.
 
-> **[Play Apache//Can.yon Live →](https://archive.mikehiggins.me.uk/notes/games-26/apache-canyon/)**
+> **[Play Apache//Can.yon Live →](https://archive.mikehiggins.me.uk/games/apache-canyon/)**
 
 ```bash
 npm install
